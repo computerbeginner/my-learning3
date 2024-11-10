@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>symbol創建對象</title>
+</head>
+<body>
+    <script>
+        // 向對象中添加方法
+        let game = {
+            name: '俄羅斯方塊',
+            up: function(){},
+            down: function(){}
+        };
+
+        // 如果想往game對象加屬性方法，但是不知道game對象中是否有重複的屬性方法，
+        // 聲明一個對象
+        let methods = {
+            up: Symbol(),
+            down: Symbol()
+        };
+
+        game[methods.up] = function(){
+            console.log('我可以上升');
+        };
+        game[methods.down] = function(){
+            console.log('我可以下降');
+        }
+
+        console.log(game);
+
+        // 添加symbol類型的屬性方法
+        let game1 = {
+            name: '狼人殺',
+            [Symbol('say')]: function(){
+                console.log('我可以發言');
+            },
+            [Symbol('explosion')]: function(){
+                console.log('我可以爆炸');
+            }
+        }
+        console.log(game1);
+    </script>
+</body>
+</html>

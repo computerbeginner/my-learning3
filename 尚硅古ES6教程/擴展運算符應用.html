@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>擴展運算符應用</title>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+        // 1.數組合併
+        const a = ['布加迪', '帕加尼'];
+        const b = ['藍寶堅尼', '法拉利'];
+        // 方法一: concat
+        // const ab = a.concat(b);
+        // 方法二: 擴展運算符
+        const ab = [...a, ...b];
+        console.log(ab);
+
+        // 2.數組的複製
+        const c = ['e', 'f', 'g'];
+        const d = [...c];
+        console.log(d);
+
+        // 3.將偽數組變成真正的數組
+        const divs = document.querySelectorAll('div');
+        console.log(divs);
+        const divArr = [...divs];
+        console.log(divArr);
+    </script>
+</body>
+</html>

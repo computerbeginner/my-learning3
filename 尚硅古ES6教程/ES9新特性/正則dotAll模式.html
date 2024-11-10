@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正則dotAll模式</title>
+</head>
+<body>
+    <script>
+        // dot 也就是 . (又叫做源字符) 代表除換行外的任意單個字符
+        let str = `
+            <ul>
+                <li>
+                    <a>肖生克的救贖</a>
+                    <p>上映日期: 1994-09-10</p>
+                </li>
+                <li>
+                    <a>阿甘正傳</a>
+                    <p>上映日期: 1994-07-06</p>
+                </li>
+            </ul>`;
+
+            // 聲明正則
+            const reg = /<li>.*?<a>(.*?)<\/a>.*?<p>(.*?)<\/p>/s;
+            // 執行匹配
+            const result = reg.exec(str);
+            console.log(result);
+    </script>
+</body>
+</html>

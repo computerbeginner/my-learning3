@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>私有屬性</title>
+</head>
+<body>
+    <script>
+        class Person{
+            // 公有屬性
+            name;
+            // 私有屬性
+            #age;
+            #weight;
+            // 構造方法
+            constructor(name, age, weight){
+                this.name = name;
+                this.#age = age;
+                this.#weight = weight;
+            };
+
+            intro(){
+                console.log(this.name);
+                console.log(this.#age);
+                console.log(this.#weight);
+            }
+        }
+
+        const girl = new Person('小紅', 18, '45kg');
+        // console.log(girl.name);
+        // // 拿不到私有屬性
+        // console.log(girl.name);
+        // console.log(girl.name);
+        girl.intro();
+    </script>
+</body>
+</html>

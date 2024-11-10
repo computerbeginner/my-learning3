@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生成器函數聲明與調用</title>
+</head>
+<body>
+    <script>
+        // 生成器是一個特殊函數
+        // 用來處理異步編程(例如:回調函數、node中的fs模塊、ajax及mongodb資料庫)
+        // yield為函數內部的分隔符
+        function * gen() {
+            // console.log(111);
+            yield '一隻沒有耳朵';
+            // console.log(222);
+            yield '一隻沒有尾巴';
+            // console.log(333);
+            yield '真奇怪';
+            // console.log(444);
+        }
+
+        let iterator = gen();
+        // 每調一次next()方法，就執行到一個yield
+        // iterator.next();
+        // iterator.next();
+        // iterator.next();
+        // iterator.next();
+        // 調用next方法返回的是一個對象
+        // console.log(iterator.next());
+        // console.log(iterator.next());
+        // console.log(iterator.next());
+        // console.log(iterator.next());
+
+        for(let v of gen()){
+            console.log(v);
+        }
+    </script>
+</body>
+</html>

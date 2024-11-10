@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES8對象方法擴展</title>
+</head>
+<body>
+    <script>
+        const school = {
+            name: '尚硅谷',
+            cities: ['北京', '上海', '深圳'],
+            xueke: ['前端', 'java', '大數據', '運維']
+        }
+
+        // // 獲取對象所有的鍵
+        // console.log(Object.keys(school)); 
+        // // 獲取對象所有的值
+        // console.log(Object.values(school));
+        // // 獲取的是數組 其值為:對象中每組 鍵和值 產生的數組
+        // console.log(Object.entries(school));
+
+        // 對象屬性的描述對象
+        console.log(Object.getOwnPropertyDescriptors(school));
+
+        const obj = Object.create(null, {
+            name: {
+                // getOwnPropertyDescriptors方法獲取的就是以下這些值
+                // 設置值
+                value: '尚硅谷',
+                // 屬性特性
+                writable: true,
+                configurable: true,
+                enumerable: true
+            }
+        })
+        // 只能獲取 value值
+        console.log(obj);
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class類的聲明</title>
+</head>
+<body>
+    <script>
+        // 用ES5的方式聲明類
+        // function Phone(brand, price){
+        //     this.brand = brand;
+        //     this.price = price;
+        // }
+        // // 添加方法
+        // Phone.prototype.call = function(){
+        //     console.log('我可以打電話');
+        // }
+
+        // // 實例化對象
+        // let Huawei = new Phone('華為', 5999);
+        // Huawei.call();
+        // console.log(Huawei);
+
+        // 用ES6方式聲明類
+        class Phone{
+            constructor(brand, price){
+                this.brand = brand;
+                this.price = price;
+            }
+
+            call() {
+                console.log('我可以打電話');
+            }
+        }
+        let p = new Phone('小米', 1999);
+        p.call();
+        console.log(p);
+    </script>
+</body>
+</html>

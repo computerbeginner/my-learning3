@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>簡化對象寫法</title>
+</head>
+<body>
+    <script>
+        // ES6允許在大括號裡面，用簡寫方式直接寫變量和函數，作為對象的屬性和方法
+        let name = '尚硅谷';
+        let change = function(){
+            console.log('改變世界');
+        }
+
+        const school = {
+            // 正常寫法
+            // name: name,
+            // change: change
+            // improve: function(){
+            //     console.log('提高技能');
+            // }
+            // 簡寫成
+            name,
+            change,
+            improve(){
+                console.log('提高技能');
+            }
+        }
+        console.log(school);
+    </script>
+</body>
+</html>

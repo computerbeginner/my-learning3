@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>let變量聲明</title>
+</head>
+<body>
+    <script>
+        // let聲明變量
+        let a;
+        // let聲明變量並賦值
+        let b = 100;
+
+        // let不能重複聲明
+        // let star = '羅志祥';
+        // let star = '小豬';
+
+        // let是塊級作用域
+        // 例如:只在if else while for內部塊級作用域有效
+        {
+            let girl = '迪麗熱巴';
+        }
+        // console.log(girl);
+
+        // 不存在變量提升
+        // console.log(song);
+        // let song = '告白氣球';
+
+        // 不影響作用域鍊
+        {
+            let school = '你好';
+            function fn() {
+                console.log(school);
+            }
+            fn();
+        }
+    </script>
+</body>
+</html>

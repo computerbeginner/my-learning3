@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promise-then方法</title>
+</head>
+<body>
+    <script>
+        let p = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve('用戶數據');
+                // reject('出錯啦');
+            }, 1000);
+        });
+
+        // 無返回值，狀態為fulfilled，值為undefined
+        // 有返回值但非promise對象，狀態為fulfilled，值為返回的值
+        // 有返回值且為promise對象，新的實例化對象的狀態和值取決於返回的promise的狀態和值
+
+        let result = p.then((value) => {
+            // return 123;
+            return new Promise((resolve, reject) => {
+                // resolve('ok');
+                // reject('error');
+                // throw new Error('出錯啦');
+                throw '出錯啦';
+            })
+        }, (reason) => {
+            console.warn(reason);
+        });
+
+        console.log(result);
+    </script>
+</body>
+</html>

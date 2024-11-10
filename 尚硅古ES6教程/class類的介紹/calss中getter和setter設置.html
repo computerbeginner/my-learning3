@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calss中getter和setter設置</title>
+</head>
+<body>
+    <script>
+        // get: 當屬性被讀取時調用
+        // set: 當屬性被修改時調用
+        class Phone{
+            get price(){
+                console.log('價格屬性被讀取了');
+                return 100;
+            }
+            set price(newVal){
+                console.log('價格屬性被修改了');
+            }
+        }
+
+        let p = new Phone();
+        console.log(p.price);
+        p.price = 999;
+    </script>
+</body>
+</html>

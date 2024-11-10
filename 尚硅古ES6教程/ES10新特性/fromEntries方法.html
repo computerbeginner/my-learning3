@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object.fromEntries方法</title>
+</head>
+<body>
+    <script>
+        // 產生二維數組
+        // const result = Object.fromEntries([
+        //     ['name', '尚硅谷'],
+        //     ['subject', 'Java,大數據,前端,雲計算']
+        // ]);
+        // console.log(result);
+
+        // Map
+        // const m = new Map();
+        // m.set('name', 'atguigu');
+        // const result1 = Object.fromEntries(m);
+        // console.log(result1);
+
+        // ES8的方法:Object.entries 將對象轉變成二維數組
+        const arr = Object.entries({
+            name: '尚硅谷'
+        });
+        console.log(arr);
+    </script>
+</body>
+</html>

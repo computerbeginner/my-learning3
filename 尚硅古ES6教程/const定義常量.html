@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>const定義常量</title>
+</head>
+<body>
+    <script>
+        // 聲明常量
+        // 一定要賦予初始值
+        // 一般常量用大寫
+        const SCHOOL = '尚硅谷';
+
+        // 常量的值不能修改
+        // SCHOOL = 'abc';
+
+        // 跟let聲明一樣有塊級作用域
+        // {
+        //     const PLAYER = 'A';
+        // }
+        // console.log(PLAYER);
+
+        // 對於數組及對象的元素修改，不算對常量的修改，不會報錯
+        const TEAM = ['a', 'b', 'c', 'd'];
+        TEAM.push('e');
+        console.log(TEAM);
+
+    </script>
+</body>
+</html>

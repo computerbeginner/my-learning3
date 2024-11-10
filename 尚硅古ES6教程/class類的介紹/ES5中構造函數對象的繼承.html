@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES5中構造函數對象的繼承</title>
+</head>
+<body>
+    <script>
+        // 創建Phone構造函數
+        function Phone(brand, price){
+            this.brand = brand;
+            this.price = price;
+        }
+        Phone.prototype.call = function(){
+            console.log('我可以打電話');
+        }
+
+        // 創建SmartPhone構造函數
+        function SmartPhone(brand, price, color, size){
+            Phone.call(this, brand, price);
+            this.color = color;
+            this.size = size;
+        }
+
+        // 設置子級構造函數的原型
+        SmartPhone.prototype = new Phone;
+        SmartPhone.prototype.constructor = SmartPhone;
+
+        // 聲明子類的方法
+        SmartPhone.prototype.photo = function(){
+            console.log('我可以拍照');
+        }
+
+        SmartPhone.prototype.playGame = function(){
+            console.log('我可以玩遊戲');
+        }
+
+        const obj = new SmartPhone('小米', 2499, '黑色', '5.5inch');
+        console.log(obj);
+    </script>
+</body>
+</html>

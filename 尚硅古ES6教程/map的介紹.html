@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>map的介紹</title>
+</head>
+<body>
+    <script>
+        // 聲明Map: 類似對象的鍵值對結構，但是鍵不一定是字符串
+        let m = new Map();
+
+        // 添加元素
+        m.set('name', '尚硅谷');
+        m.set('change', function(){
+            console.log('改變功能');
+        })
+        let key = {
+            school: 'atguigu'
+        };
+        m.set(key, ['北京', '上海', '廣州']);
+        console.log(m);
+
+        //size
+        console.log(m.size);
+        
+        // 刪除
+        m.delete('name');
+        console.log(m);
+
+        // 獲取
+        console.log(m.get('change'));
+        console.log(m.get(key));
+    </script>
+</body>
+</html>

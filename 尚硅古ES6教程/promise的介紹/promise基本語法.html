@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promise基本語法</title>
+</head>
+<body>
+    <script>
+        // 創建promise實例化對象
+        let p = new Promise((resolve, reject) => {
+            // 調用resolve把狀態改為成功
+            // let data = '數據讀取成功';
+            // resolve(data);
+
+            // 調用reject把狀態改為失敗
+            let err = '數據讀取失敗';
+            reject(err);
+        })
+
+        p.then((value) => {
+            console.log(value);
+        }, (reason) => {
+            console.error(reason);
+        })
+    </script>
+</body>
+</html>

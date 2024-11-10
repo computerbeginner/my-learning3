@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>對象展開</title>
+</head>
+<body>
+    <script>
+        // rest參數和spread擴展運算符在ES6中已經引入，不過ES6只針對數組
+        // 在ES9中為對象提供了像數組一樣的rest參數和擴展運算符
+        function connect({host, port, ...user}){
+            console.log(host);
+            console.log(port);
+            console.log(user);
+        }
+
+        connect({
+            host: '127.0.0.1',
+            port: 3306,
+            username: 'root',
+            password: 'root',
+            type: 'master'
+        })
+
+        const skillOne = {
+            q: '天音波'
+        }
+        const skillTwo = {
+            w: '金鐘罩'
+        }
+        const skillThree = {
+            e: '一陽指'
+        }
+        const skillFour = {
+            r: '猛龍擺尾'
+        }
+        const obj = {...skillOne, ...skillTwo, ...skillThree, ...skillFour};
+        console.log(obj);
+    </script>
+</body>
+</html>

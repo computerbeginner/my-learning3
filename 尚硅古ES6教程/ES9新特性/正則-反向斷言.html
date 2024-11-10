@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正則-反向斷言</title>
+</head>
+<body>
+    <script>
+        let str = 'js123145你知道嗎555啦啦啦';
+
+        // 正向斷言
+        const reg = /\d+(?=啦)/;
+        const result = reg.exec(str);
+        console.log(result);
+
+        // 反向斷言
+        // const reg = /(?<=嗎)\d+/;
+        // const result1 = reg.exec(str);
+        // console.log(result1);
+    </script>
+</body>
+</html>

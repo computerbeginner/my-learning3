@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>可選鏈操作符</title>
+</head>
+<body>
+    <script>
+        // ?.(可選鏈操作符) 
+        function main(config){
+            // 正常來說要這樣寫才不會報錯
+            // const dbhost = config && config.db && config.db.host;
+            // 有了可選鏈操作符後可這樣寫
+            const dbhost = config?.db?.host;
+
+            console.log(dbhost);
+        };
+
+        main({
+            db: {
+                host: '192.168.1.100',
+                usrname: 'root'
+            },
+            cache: {
+                host: '192.168.1.200',
+                usrname: 'admin'
+            },
+        });
+    </script>
+</body>
+</html>

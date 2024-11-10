@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class靜態成員</title>
+</head>
+<body>
+    <script>
+        // 靜態屬性屬於類本身，而不是其實例化對象
+        class Phone{
+            // 靜態屬性
+            static name = '手機';
+            static change(){
+                console.log('我可以改變世界');
+            }
+        }
+        
+        let nokia = new Phone();
+        console.log(nokia.name);
+        console.log(Phone.name);
+    </script>
+</body>
+</html>

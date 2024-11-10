@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>擴展運算符</title>
+</head>
+<body>
+    <script>
+        // ... 擴展運算符能將數組轉換為逗號分隔的參數序列
+        const tfboys = ['易翔千璽', '王源', '王俊凱'];
+        // 轉變為 '易翔千璽', '王源', '王俊凱'
+
+        function chunwan(){
+            console.log(arguments);
+        }
+        // chunwan(tfboys);
+
+        chunwan(...tfboys);
+    </script>
+</body>
+</html>

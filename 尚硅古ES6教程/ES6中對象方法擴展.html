@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6中對象方法擴展</title>
+</head>
+<body>
+    <script>
+        // 判斷兩值是否完全相等
+        console.log(Object.is(120, 120)); //true
+        console.log(Object.is(NaN, NaN)); //true
+        console.log(NaN === NaN); //false
+
+        // 對象合併
+        const config1 = {
+            host: 'localhost',
+            port: 3306,
+            name: 'root',
+            pass: 'root',
+            test: 'test'
+        };
+        const config2 = {
+            host: 'http://atguigu',
+            port: 33060,
+            name: 'root.com',
+            pass: 'asd',
+            abc: 'abc'
+        }
+        // 後面對象如有共同屬姓名則取代，沒有則添加
+        console.log(Object.assign(config1, config2));
+
+        // Object.setPropertyOf 設置原型對象
+        // Object.getPropertyOf 得到原型對象
+        let school = {
+            name: '尚硅谷'
+        };
+        let cities = {
+            xiaoqu: ['北京', '上海', '深圳']
+        };
+        Object.setPrototypeOf(school, cities);
+        console.log(Object.getPrototypeOf(school));
+        console.log(school);
+    </script>
+</body>
+</html>

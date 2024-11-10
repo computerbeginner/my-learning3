@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>set集合的介紹</title>
+</head>
+<body>
+    <script>
+        // 聲明一個集合
+        let s = new Set();
+        let s2 = new Set(['大事','小事','好事','壞事','小事']);
+        
+        console.log(s);
+        console.log(s2);
+
+        // 元素個數
+        console.log(s2.size);
+
+        // 添加元素
+        s2.add('喜事');
+        console.log(s2);
+        // 刪除元素
+        // s2.delete('壞事');
+        // 檢測集合內有無此元素
+        console.log(s2.has('糟心事'));
+        // 清空集合
+        // s2.clear();
+        // console.log(s2);
+
+        // 遍歷集合
+        for(let v of s2){
+            console.log(v);
+        }
+    </script>
+</body>
+</html>

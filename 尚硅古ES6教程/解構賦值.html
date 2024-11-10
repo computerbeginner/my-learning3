@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>解構賦值</title>
+</head>
+<body>
+    <script>
+        // ES6允許從數組和對象提取值，再對變量賦值，稱為解構賦值
+        // 1.數組的結構
+        const city = ['北京', '上海', '廣州', '深圳'];
+        let [a, b, c, d] = city;
+        console.log(a,b,c,d);
+
+        // 2.對象的結構
+        const obj = {
+            name: '趙本山',
+            age: '不詳',
+            dance: function(){
+                console.log('我可以跳舞');
+            }
+        };
+
+        // 可以全部賦值
+        // let {name, age, dance} = obj;
+        // console.log(name);
+        // console.log(age);
+        // console.log(dance);
+
+        // 也可以賦值一個
+        let {dance} = obj;
+        dance();
+
+    </script>
+</body>
+</html>

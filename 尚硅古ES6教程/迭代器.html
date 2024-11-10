@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>迭代器</title>
+</head>
+<body>
+    <script>
+        // 聲明一個數組
+        const xiyou = ['唐僧', '孫悟空', '豬八戒', '沙悟淨'];
+
+        // 用for..in遍歷數組，返回索引值
+        for(let v in xiyou){
+            console.log(v);
+        };
+
+        // 用for..of遍歷數組，返回數組值
+        for(let v of xiyou){
+            console.log(v);
+        };
+
+        // 每個可遍歷的數據結構都有迭代器，然後獲取數組中的迭代器
+        let iterator = xiyou[Symbol.iterator]();
+        // 調用迭代器的next()方法，指針從第一個數值往下跑，直到數據跑完就會開始傳回undefined
+        console.log(iterator.next());
+        console.log(iterator.next());
+        console.log(iterator.next());
+        console.log(iterator.next());
+        console.log(iterator.next());
+
+    </script>
+</body>
+</html>

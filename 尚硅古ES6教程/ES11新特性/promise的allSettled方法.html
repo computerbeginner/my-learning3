@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promise的allSettled方法</title>
+</head>
+<body>
+    <script>
+        // 聲明2個promise對象
+        const p1 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve('商品數據-1');
+            }, 1000);
+        });
+
+        const p2 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve('商品數據-2');
+                // reject('出錯啦');
+            }, 1000);
+        });
+
+        // 調用allSettled方法: 返回值為狀態fulfilled的promise對象
+        // const result = Promise.allSettled([p1, p2]);
+        // console.log(result);
+
+        // 調用all方法: 返回值也是promise對象，只有2個promise都成功，其狀態才成功，否則為失敗
+        const result1 = Promise.all([p1, p2]);
+        console.log(result1);
+    </script>
+</body>
+</html>

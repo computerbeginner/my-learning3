@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flat和flatMap方法</title>
+</head>
+<body>
+    <script>
+        // flat() 將多為數組轉化為低位數組
+        // 參數默認為1，將n維數組轉成n-1為數組
+        // 如果設為2，將n維數組轉成n-2為數組，以此類推
+        // const arr = [1,2,3,4,[5,6]];
+        // console.log(arr.flat());
+        // const arr1 = [1,2,3,4,[5,6,[7,8,9]]];
+        // console.log(arr1.flat());
+
+        // flatMap(): map()的返回值如果是多維數組，則降成低維數組
+        const arr2 = [1,2,3,4];
+        const result = arr2.flatMap(item => [item * 10]);
+        console.log(result);
+    </script>
+</body>
+</html>

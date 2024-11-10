@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rest參數</title>
+</head>
+<body>
+    <script>
+        // ES6引入rest參數，用於獲取函數的實參，用來代替arguments
+        // arguments的用法，回傳的是對象
+        function data(){
+            console.log(arguments);
+        };
+        data('a', 'b', 'c');
+
+        // rest的用法，回傳的是數組
+        function data(...args){
+            console.log(args);
+        };
+        data('a', 'b', 'c');
+
+        // rest參數必須放最後
+        function fn(a,b,...args){
+            console.log(a);
+            console.log(b);
+            console.log(args);
+        };
+        fn(1,2,3,4,5,6);
+    </script>
+</body>
+</html>

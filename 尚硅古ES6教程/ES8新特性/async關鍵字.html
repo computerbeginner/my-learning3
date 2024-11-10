@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async關鍵字</title>
+</head>
+<body>
+    <script>
+        // async函數
+        async function fn() {
+            // 返回基本數據(字符串...)，其結果為promise對象，則狀態為成功，值為返回值
+            // return 123;
+            // 拋出錯誤，返回promise對象，其狀態為失敗，值為拋出異常的值
+            // throw new Error('出錯啦');
+            // 返回promise對象，其狀態和值取決於調用resolve還是reject方法
+            return new Promise((resolve, reject) => {
+                resolve('成功');
+                // reject('失敗');
+            })
+        }
+
+        let result = fn();
+        // console.log(result);
+
+        result.then((value) => {
+            console.log(value);
+        }, (reason) => {
+            console.log(reason);
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6中類的繼承和重寫</title>
+</head>
+<body>
+    <script>
+        class Phone{
+            constructor(brand, price){
+                this.brand = brand;
+                this.price = price;
+            }
+            // 父類的call方法
+            call(){
+                console.log('我可以打電話');
+            }
+        }
+
+        class SmartPhone extends Phone{
+            constructor(brand, price, color, size){
+                super(brand, price); //相當於ES5中Phone.call(this,brand,price)
+                this.color = color;
+                this.size = size;
+            }
+
+            photo(){
+                console.log('拍照');
+            }
+            playGame(){
+                console.log('玩遊戲');
+            }
+            // 子類的call方法
+            call(){
+                console.log('我是子類的call方法，我還是可以打電話');
+            }
+        }
+
+        let xiaomi = new SmartPhone('小米', 799, '黑色', '4.7inch');
+        // console.log(xiaomi);
+        
+        xiaomi.call();
+        xiaomi.photo();
+        xiaomi.playGame();
+    </script>
+</body>
+</html>

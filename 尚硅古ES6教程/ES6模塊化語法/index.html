@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模塊化</title>
+</head>
+<body>
+    <script type="module">
+        // 1.通用的導入方式
+        // 引入m1.js模塊內容
+        // import * as m1 from './js/m1.js';
+        // console.log(m1);
+        // 引入m2.js模塊內容
+        // import * as m2 from './js/m2.js';
+        // console.log(m2);
+        // 引入m3.js模塊內容
+        // import * as m3 from './js/m3.js';
+        // console.log(m3);
+        // 如果要調用默認暴露方式的方法要加default
+        // m3.default.change();
+
+        // 2.用解構賦值的方式導入模塊
+        // import {school, teach} from './js/m1.js';
+        // import {school as atguigu, findJob} from './js/m2.js';
+        // import {default as m3} from './js/m3.js';
+        // console.log(atguigu, findJob);
+        // console.log(m3);
+
+        // 簡便形式(針對默認暴露)
+        // import m3 from './js/m3.js';
+        // console.log(m3);
+    </script>
+    <!-- 將模塊匯總到app.js再引入 -->
+    <script type="module" src="./js/app.js"></script>
+</body>
+</html>

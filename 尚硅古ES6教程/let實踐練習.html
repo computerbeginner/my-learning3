@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>let實踐練習</title>
+    <style>
+        .container {
+            width: 500px;
+        }
+        .clearfix::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .item {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            float: left;
+            margin: 0 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="page-header">點擊切換顏色</h1>
+    <div class="container clearfix">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+
+    <script>
+        let items = document.getElementsByClassName('item');
+
+        for(let i=0; i<items.length; i++){
+            items[i].onclick = function(){
+                // this.style.background = 'pink';
+                // 如果是用var聲明就不行用item[i]，因為var沒有塊級作用域的概念
+                items[i].style.background = 'pink';
+            }
+        }
+    </script>
+</body>
+</html>
